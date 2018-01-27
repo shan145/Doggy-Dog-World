@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         registerButton.titleLabel?.font = UIFont(name: "TimesNewRomanPSMT", size: 27.0)
         registerButton.setTitle("Register", for: .normal)
         registerButton.setTitleColor(UIColor.blue, for: .normal)
-        //instructbutton.addTarget(self, action: #selector(instructionsPressed), for: .touchUpInside)
+        //registerButton.addTarget(self, action: #selector(registerPressed), for: .touchUpInside)
         view.addSubview(registerButton)
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         loginButton.titleLabel?.font = UIFont(name: "TimesNewRomanPSMT", size: 27.0)
         loginButton.setTitle("Log In", for: .normal)
         loginButton.setTitleColor(UIColor.blue, for: .normal)
-       // loginButton.addTarget(self, action: #selector(instructionsPressed), for: .touchUpInside)
+       // loginButton.addTarget(self, action: #selector(loginPressed), for: .touchUpInside)
         view.addSubview(loginButton)
         
     }
