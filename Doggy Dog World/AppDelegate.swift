@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  Doggy Dog World
 //
-//  Created by samuelhan on 1/27/18.
-//  Copyright © 2018 Samuel Han. All rights reserved.
+//  Created by suinjung on 1/27/18.
+//  Copyright © 2018 Suin Jung. All rights reserved.
 //
 
 import UIKit
@@ -15,10 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        window = UIWindow()
-        window?.rootViewController = UINavigationController(rootViewController: ViewController())
-        window?.makeKeyAndVisible()
+//         Override point for customization after application launch.
+//        window = UIWindow()
+//        window?.rootViewController = UINavigationController(rootViewController: RegisterViewController())
+//        window?.makeKeyAndVisible()
         return true
     }
 
