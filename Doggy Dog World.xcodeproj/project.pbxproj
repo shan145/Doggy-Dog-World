@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9A36E49F201D0FEC0044F8C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A36E49E201D0FEC0044F8C1 /* LoginViewController.swift */; };
 		9A36E4A1201D0FF70044F8C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A36E4A0201D0FF70044F8C1 /* Main.storyboard */; };
+		9A36E4A7201D2A2F0044F8C1 /* TaskStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A36E4A6201D2A2F0044F8C1 /* TaskStoryBoard.storyboard */; };
 		B2F2341B201CCE3C00A77F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2341A201CCE3C00A77F48 /* AppDelegate.swift */; };
 		B2F2341D201CCE3C00A77F48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2341C201CCE3C00A77F48 /* ViewController.swift */; };
 		B2F23422201CCE3C00A77F48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F23421201CCE3C00A77F48 /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		9A36E49E201D0FEC0044F8C1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9A36E4A0201D0FF70044F8C1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9A36E4A6201D2A2F0044F8C1 /* TaskStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskStoryBoard.storyboard; sourceTree = "<group>"; };
 		B2F23417201CCE3C00A77F48 /* Doggy Dog World.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Doggy Dog World.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2F2341A201CCE3C00A77F48 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2F2341C201CCE3C00A77F48 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				B2F2341C201CCE3C00A77F48 /* ViewController.swift */,
 				9A36E49E201D0FEC0044F8C1 /* LoginViewController.swift */,
 				9A36E4A0201D0FF70044F8C1 /* Main.storyboard */,
+				9A36E4A6201D2A2F0044F8C1 /* TaskStoryBoard.storyboard */,
 				B2F23421201CCE3C00A77F48 /* Assets.xcassets */,
 				B2F23423201CCE3C00A77F48 /* LaunchScreen.storyboard */,
 				B2F23426201CCE3C00A77F48 /* Info.plist */,
@@ -140,6 +143,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9A36E4A7201D2A2F0044F8C1 /* TaskStoryBoard.storyboard in Resources */,
 				B2F23425201CCE3C00A77F48 /* LaunchScreen.storyboard in Resources */,
 				B2F23422201CCE3C00A77F48 /* Assets.xcassets in Resources */,
 				9A36E4A1201D0FF70044F8C1 /* Main.storyboard in Resources */,
