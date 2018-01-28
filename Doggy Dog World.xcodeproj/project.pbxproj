@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9A36E4A1201D0FF70044F8C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A36E4A0201D0FF70044F8C1 /* Main.storyboard */; };
+		B21A3C33201DDB8600829AFE /* DailyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21A3C32201DDB8600829AFE /* DailyViewController.swift */; };
 		B22F2400201D876A00FFB281 /* TaskTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22F23FF201D876A00FFB281 /* TaskTableViewCell.swift */; };
 		B22F2402201D901500FFB281 /* TaskTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22F2401201D901500FFB281 /* TaskTableViewController.swift */; };
 		B22F2404201D90A400FFB281 /* Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B22F2403201D90A400FFB281 /* Tasks.swift */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		9A36E49E201D0FEC0044F8C1 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		9A36E4A0201D0FF70044F8C1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B21A3C32201DDB8600829AFE /* DailyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyViewController.swift; sourceTree = "<group>"; };
 		B22F23FF201D876A00FFB281 /* TaskTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewCell.swift; sourceTree = "<group>"; };
 		B22F2401201D901500FFB281 /* TaskTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskTableViewController.swift; sourceTree = "<group>"; };
 		B22F2403201D90A400FFB281 /* Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tasks.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 				B2F23423201CCE3C00A77F48 /* LaunchScreen.storyboard */,
 				B2F23426201CCE3C00A77F48 /* Info.plist */,
 				FD666BAF201D0AE20061E2D7 /* RegisterViewController.swift */,
+				B21A3C32201DDB8600829AFE /* DailyViewController.swift */,
 				B22F2403201D90A400FFB281 /* Tasks.swift */,
 				B22F2407201DBB3200FFB281 /* EndBrkfstViewController.swift */,
 			);
@@ -175,6 +178,7 @@
 				B22F2404201D90A400FFB281 /* Tasks.swift in Sources */,
 				B22F2402201D901500FFB281 /* TaskTableViewController.swift in Sources */,
 				B2F2347B201D4F5900A77F48 /* LoginViewController.swift in Sources */,
+				B21A3C33201DDB8600829AFE /* DailyViewController.swift in Sources */,
 				FD666BB0201D0AE20061E2D7 /* RegisterViewController.swift in Sources */,
 				B22F2400201D876A00FFB281 /* TaskTableViewCell.swift in Sources */,
 				B2F2341D201CCE3C00A77F48 /* ViewController.swift in Sources */,

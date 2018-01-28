@@ -58,6 +58,10 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         // Do any additional setup after loading the view.
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == breedPicker {
             return arrayOfBreed.count

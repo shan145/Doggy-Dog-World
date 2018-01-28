@@ -95,19 +95,22 @@ class TaskTableViewController: UITableViewController {
             print("Breakfast pressed")
             self.performSegue(withIdentifier: "yourSegue", sender: self)
         }
-        else {
-            print("Not happening")
+        else if task.name == "Take a picture with Joseph!" {
+            print("Daily Challenge pressed")
+            self.performSegue(withIdentifier: "dailySegue", sender: self)
         }
         
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if (segue.identifier == "yourSegue") {
         // get a reference to the second view controller
-        let secondViewController = segue.destination as! BrkfstViewController
+            let brkfstViewController = segue.destination as! BrkfstViewController
+        }
+        else if (segue.identifier == "dailySegue") {
+            let dailViewController = segue.destination as! DailyViewController
+        }
         
-        // set a variable in the second view controller with the data to pass
-        //secondViewController.receivedData = "hello"
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
