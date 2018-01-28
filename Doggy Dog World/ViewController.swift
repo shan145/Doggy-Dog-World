@@ -34,13 +34,17 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func registerButton(_ sender: UIButton) {
+    @IBAction func unwindToVC1(segue:UIStoryboardSegue) {
         
     }
     
-    @IBAction func loginButton(_ sender: UIButton) {
-        
-    }
+//    @IBAction func registerButton(_ sender: UIButton) {
+//        print("Register pressed")
+//    }
+//    
+//    @IBAction func loginButton(_ sender: UIButton) {
+//        print("Login pressed")
+//    }
     
     
 //    @objc func loginPressed() {
