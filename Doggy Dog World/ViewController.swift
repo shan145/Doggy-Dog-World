@@ -34,9 +34,7 @@ class ViewController: UIViewController {
         
     }
     
-    @IBAction func unwindToVC1(segue:UIStoryboardSegue) {
-        
-    }
+
     
 //    @IBAction func registerButton(_ sender: UIButton) {
 //        print("Register pressed")

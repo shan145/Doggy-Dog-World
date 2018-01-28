@@ -42,7 +42,10 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     @IBOutlet weak var conditionsBox: UITextField!
     
-    @IBOutlet weak var registerButton: UIButton!
+    @IBAction func registerButton(_ sender: UIButton) {
+        
+    }
+    
     
     let arrayOfBreed:[String] = ["Beagle", "Golden Retriever", "Bagel"]
     let arrayOfActivityLevel:[String] = ["Sedentary", "Light", "Moderate", "High Activity"]
