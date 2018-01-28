@@ -63,7 +63,7 @@ It is sometimes best to split the amount into two or more separate feedings
 rather than just one big meal, often twice a day. Puppies should be fed more
 often than adult dogs. */
 // source: https://www.dogbreedinfo.com/feeding.htm
-function AdultFoodAmount (breed: String, age: Int, weight: Float, activityLevel: String) -> Float {
+func AdultFoodAmount (breed: String, age: Int, weight: Float, activityLevel: String) -> Float {
   let activityFoodPercent =
     switch Activity {
     case "Sedentary": 0.9
@@ -78,32 +78,32 @@ function AdultFoodAmount (breed: String, age: Int, weight: Float, activityLevel:
   case 2..12:
     return AdultFoodAmount(DogBreed, 13, weight, activityLevel) / 2.0
   default:
-    {function foodHelperDef (weight: Float) -> Float {
+    {func foodHelperDef (weight: Float) -> Float {
       return weight * 0.0286 + 0.4196 //linearly across data found in source
-    } function foodHelper1 (weight: Float) -> Float {
+        }; function foodHelper1 (weight: Float) -> Float {
       switch weight {
       case 0.0..10.0: return weight * 0.05 + 0.25
       default: return 0.75
       }
-    } function foodHelper2 (weight: Float) -> Float {
+        }; func foodHelper2 (weight: Float) -> Float {
       switch weight {
       case 0.0..10.0: return 0.75
       case 10.0..25.0: return weight / 60.0 + 7.0 / 12.0
       default: return 1.0
       }
-    } function foodHelper3 (weight: Float) -> Float {
+        }; func foodHelper3 (weight: Float) -> Float {
       switch weight {
       case 0.0..25.0: return 1.0
       case 25.0..50.0: return weight / 25.0
       default: return 2.0
       }
-    } function foodHelper4 (weight: Float) -> Float {
+        }; func foodHelper4 (weight: Float) -> Float {
       switch weight {
       case 0.0..50.0: return 2.0
       case 50.0..75.0: return weight / 50.0 + 1.0
       default: return 2.5
       }
-    } function foodHelper5 (weight: Float) -> Float {
+        }; func foodHelper5 (weight: Float) -> Float {
       switch weight {
       case 0.0..75.0: return 2.0
       case 75.0..150.0: return weight / 37.5
@@ -150,7 +150,7 @@ function AdultFoodAmount (breed: String, age: Int, weight: Float, activityLevel:
 // case Mastiff: foodHelper5(weight)
 // default: foodHelperDef(weight)
 
-function foodFrequency (age: Int){
+func foodFrequency (age: Int){
   switch age{
   case 0..1: return 3
   case 1..2: return 4
