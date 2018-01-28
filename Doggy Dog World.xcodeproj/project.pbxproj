@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9A36E49F201D0FEC0044F8C1 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A36E49E201D0FEC0044F8C1 /* LoginViewController.swift */; };
 		9A36E4A1201D0FF70044F8C1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A36E4A0201D0FF70044F8C1 /* Main.storyboard */; };
 		B2F2341B201CCE3C00A77F48 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2341A201CCE3C00A77F48 /* AppDelegate.swift */; };
 		B2F2341D201CCE3C00A77F48 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F2341C201CCE3C00A77F48 /* ViewController.swift */; };
 		B2F23422201CCE3C00A77F48 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2F23421201CCE3C00A77F48 /* Assets.xcassets */; };
 		B2F23425201CCE3C00A77F48 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2F23423201CCE3C00A77F48 /* LaunchScreen.storyboard */; };
-		FD666BAA201CE6F20061E2D7 /* Registration.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD666BA9201CE6F20061E2D7 /* Registration.storyboard */; };
+		B2F2347B201D4F5900A77F48 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A36E49E201D0FEC0044F8C1 /* LoginViewController.swift */; };
 		FD666BB0201D0AE20061E2D7 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD666BAF201D0AE20061E2D7 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,7 +38,6 @@
 		B2F23421201CCE3C00A77F48 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2F23424201CCE3C00A77F48 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2F23426201CCE3C00A77F48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FD666BA9201CE6F20061E2D7 /* Registration.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Registration.storyboard; sourceTree = "<group>"; };
 		FD666BAF201D0AE20061E2D7 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,7 +78,6 @@
 				B2F23421201CCE3C00A77F48 /* Assets.xcassets */,
 				B2F23423201CCE3C00A77F48 /* LaunchScreen.storyboard */,
 				B2F23426201CCE3C00A77F48 /* Info.plist */,
-				FD666BA9201CE6F20061E2D7 /* Registration.storyboard */,
 				FD666BAF201D0AE20061E2D7 /* RegisterViewController.swift */,
 			);
 			path = "Doggy Dog World";
@@ -147,7 +144,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2F23425201CCE3C00A77F48 /* LaunchScreen.storyboard in Resources */,
-				FD666BAA201CE6F20061E2D7 /* Registration.storyboard in Resources */,
 				B2F23422201CCE3C00A77F48 /* Assets.xcassets in Resources */,
 				9A36E4A1201D0FF70044F8C1 /* Main.storyboard in Resources */,
 			);
@@ -160,6 +156,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2F2347B201D4F5900A77F48 /* LoginViewController.swift in Sources */,
 				FD666BB0201D0AE20061E2D7 /* RegisterViewController.swift in Sources */,
 				B2F2341D201CCE3C00A77F48 /* ViewController.swift in Sources */,
 				B2F2341B201CCE3C00A77F48 /* AppDelegate.swift in Sources */,
