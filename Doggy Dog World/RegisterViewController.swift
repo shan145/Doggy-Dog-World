@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var breedSelected:String?
@@ -21,8 +22,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var activityLevel: UILabel!
     @IBOutlet weak var age: UILabel!
     @IBOutlet weak var weight: UILabel!
-    @IBOutlet weak var allergy: UILabel!
-    @IBOutlet weak var specialMedication: UILabel!
+    
     @IBOutlet weak var specialConditions: UILabel!
     @IBOutlet weak var registration: UILabel!
     
@@ -36,19 +36,41 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     @IBOutlet weak var activityPicker: UIPickerView!
     
-    @IBOutlet weak var allergyBox: UITextField!
-    
-    @IBOutlet weak var medicationBox: UITextField!
-    
     @IBOutlet weak var conditionsBox: UITextField!
     
+    private var owners = [RegisterOwner]()
+    
     @IBAction func registerButton(_ sender: UIButton) {
-        
+        let username = userBox.text ?? ""
+        let password = passBox.text ?? ""
+        let petname = petBox.text ?? ""
+        let breed = breedSelected ?? ""
+        let age = Int(ageBox.text ?? "")
+        let weight = Int(weightBox.text ?? "")
+        let activity = activityLevelSelected ?? ""
+        let conditions = conditionsBox.text ?? ""
+            if ((userBox.text?.isEmpty ?? true) || (passBox.text?.isEmpty ?? true) ||
+                (petBox.text?.isEmpty ?? true) || (conditionsBox.text?.isEmpty ?? true) ||
+                (ageBox.text?.isEmpty ?? true) || (weightBox.text?.isEmpty ?? true) ||
+                (conditionsBox.text?.isEmpty ?? true) ||
+                (breedSelected?.isEmpty ?? true) || (activityLevelSelected?.isEmpty ?? true)) {
+                print("registerButton else reached")
+            }
+            else {
+                
+                if let id = SqlDB.instance.addOwner(cusername: username, cpass: password, cpetname: petname, cbreed: breed, c_age: age!, c_weight: weight!, cactivity_level: activityLevelSelected!, c_specialCond: conditions) {
+                        
+                    let owner = RegisterOwner(id: id, username: username, password: password, petname: petname, breed: breed, age: age!, weight: weight!, activity_level: activity, specialCond: conditions)
+                    owners.append(owner)
+                }
+            }
     }
     
-    
-    let arrayOfBreed:[String] = ["Beagle", "Golden Retriever", "Bagel"]
+
+    var breeds: [String]!
     let arrayOfActivityLevel:[String] = ["Sedentary", "Light", "Moderate", "High Activity"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.breedPicker.delegate = self
@@ -58,13 +80,38 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
         // Do any additional setup after loading the view.
     }
     
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "registerSegue" {
+            
+            if ((userBox.text?.isEmpty ?? true) || (passBox.text?.isEmpty ?? true) ||
+                (petBox.text?.isEmpty ?? true) || (conditionsBox.text?.isEmpty ?? true) ||
+                (ageBox.text?.isEmpty ?? true) || (weightBox.text?.isEmpty ?? true) ||
+                (conditionsBox.text?.isEmpty ?? true) ||
+                (breedSelected?.isEmpty ?? true) || (activityLevelSelected?.isEmpty ?? true)) {
+                
+                let alert = UIAlertController(title: "No text", message: "Please Enter Text In All Boxes & Select", preferredStyle: UIAlertControllerStyle.alert)
+                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return false
+            }
+                
+            else {
+                return true
+            }
+        }
+        // by default, transition
+        return true
+    }
+    
+    
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if pickerView == breedPicker {
-            return arrayOfBreed.count
+           return breeds.count
         }
         else {
             return arrayOfActivityLevel.count
@@ -77,7 +124,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         if pickerView == breedPicker {
-            return arrayOfBreed[row]
+            return breeds[row]
         }
         else {
             return arrayOfActivityLevel[row]
@@ -88,7 +135,7 @@ class RegisterViewController: UIViewController, UIPickerViewDataSource, UIPicker
     // THIS LETS US RETRIEVE THE VALUE OF THE PICKER SELECTION
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView == breedPicker {
-            breedSelected = arrayOfBreed[component]
+            breedSelected = breeds[component]
         }
         else {
             activityLevelSelected = arrayOfActivityLevel[component]

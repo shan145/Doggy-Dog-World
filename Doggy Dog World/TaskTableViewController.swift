@@ -12,6 +12,7 @@ class TaskTableViewController: UITableViewController {
 
     var tasks = [Tasks]()
     var currentDateTime = Date()
+    var owner: RegisterOwner!
     
     private func loadTasks() {
         
@@ -37,7 +38,7 @@ class TaskTableViewController: UITableViewController {
                 fatalError("Unable to instantiate task2")
         }
         
-        guard let task3 = Tasks(name: "Take a picture with Joseph!", photo: photo3)
+        guard let task3 = Tasks(name: "Take a picture with \(owner.petname)!", photo: photo3)
             else {
                 fatalError("Unable to instantiate task3")
         }
@@ -95,7 +96,7 @@ class TaskTableViewController: UITableViewController {
             print("Breakfast pressed")
             self.performSegue(withIdentifier: "yourSegue", sender: self)
         }
-        else if task.name == "Take a picture with Joseph!" {
+        else if task.name == "Take a picture with \(owner.petname)!" {
             print("Daily Challenge pressed")
             self.performSegue(withIdentifier: "dailySegue", sender: self)
         }
@@ -106,9 +107,13 @@ class TaskTableViewController: UITableViewController {
         if (segue.identifier == "yourSegue") {
         // get a reference to the second view controller
             let brkfstViewController = segue.destination as! BrkfstViewController
+            brkfstViewController.owner = owner
+            
         }
         else if (segue.identifier == "dailySegue") {
             let dailViewController = segue.destination as! DailyViewController
+            dailViewController.owner = owner
+            
         }
         
     }

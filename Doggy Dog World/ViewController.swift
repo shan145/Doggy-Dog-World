@@ -10,58 +10,52 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var backgroundImage: UIImageView!
+    static let control = ViewController()
+    var breeds: [String]!
     
+    func capitalizeFirst(arrayOfStrings: [String]) -> [String] {
+        var newArray: [String] = []
+        for str in arrayOfStrings {
+            newArray.append(str.capitalized)
+        }
+        return newArray
+    }
+    
+    func setBreed() {
+        guard let breedUrl = URL(string: "https://dog.ceo/api/breeds/list") else {return}
+        URLSession.shared.dataTask(with: breedUrl) { (data, response
+            , error) in
+            guard let data = data else { return }
+            do {
+                let decoder = JSONDecoder()
+                let dogs = try decoder.decode(BreedTypes.self, from: data)
+                self.breeds = dogs.message
+                print(self.breeds)
+                
+            } catch let err {
+                print("Err", err)
+            }
+            }.resume()
+    }
+    
+    @IBOutlet weak var backgroundImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //self.setBackground()
-        
-//        let registerButton = UIButton(frame: CGRect(x: 100, y: 500, width: 200, height: 50))
-//        registerButton.titleLabel?.font = UIFont(name: "TimesNewRomanPSMT", size: 27.0)
-//        registerButton.setTitle("Register", for: .normal)
-//        registerButton.setTitleColor(UIColor.blue, for: .normal)
-//        //registerButton.addTarget(self, action: #selector(registerPressed), for: .touchUpInside)
-//        view.addSubview(registerButton)
-//        // Do any additional setup after loading the view, typically from a nib.
-//
-//        let loginButton = UIButton(frame: CGRect(x: 100, y: 550, width: 200, height: 50))
-//        loginButton.titleLabel?.font = UIFont(name: "TimesNewRomanPSMT", size: 27.0)
-//        loginButton.setTitle("Log In", for: .normal)
-//        loginButton.setTitleColor(UIColor.blue, for: .normal)
-//        loginButton.addTarget(self, action: #selector(loginPressed), for: .touchUpInside)
-//        view.addSubview(loginButton)
-        
+        setBreed()
     }
     
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "startToRegister" {
+            let destin = segue.destination as! RegisterViewController
+            destin.breeds = capitalizeFirst(arrayOfStrings: breeds)
+        }
+    }
     
-//    @IBAction func registerButton(_ sender: UIButton) {
-//        print("Register pressed")
-//    }
-//    
-//    @IBAction func loginButton(_ sender: UIButton) {
-//        print("Login pressed")
-//    }
-    
-    
-//    @objc func loginPressed() {
-//        navigationController?.pushViewController(LoginViewController(), animated: true)
-//
-//    }
-//
-//
-//    func setBackground() {
-//        let backgroundImage = UIImage(named: "cover2.png")
-//        var imageView: UIImageView!
-//        imageView = UIImageView(frame: view.bounds)
-//        imageView.contentMode =  UIViewContentMode.scaleAspectFill
-//        imageView.clipsToBounds = true
-//        imageView.image = backgroundImage
-//        //imageView.center = view.center
-//        view.addSubview(imageView)
-//        self.view.sendSubview(toBack: imageView)
-//    }
+    @IBAction func registerButton(_ sender: UIButton) {
+        print("Register pressed")
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

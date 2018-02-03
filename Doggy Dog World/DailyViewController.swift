@@ -12,6 +12,7 @@ class DailyViewController: UIViewController, UIImagePickerControllerDelegate,
 UINavigationControllerDelegate {
 
     @IBOutlet weak var titleLabel: UILabel!
+    var owner: RegisterOwner!
     @IBAction func saveButton(_ sender: UIButton) {
         guard let img = imagePicked.image else {return}
         let imageData = UIImageJPEGRepresentation(img, 0.6)
@@ -19,7 +20,7 @@ UINavigationControllerDelegate {
         let compressedJPGImage = UIImage(data: imgD)
         UIImageWriteToSavedPhotosAlbum(compressedJPGImage!, nil, nil, nil)
         
-        let alert = UIAlertController(title: "Alert", message: "Your image has been saved to Photo Library!", preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: "Nice!", message: "Your image has been saved to Photo Library!", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
 
@@ -52,6 +53,14 @@ UINavigationControllerDelegate {
             imagePicked.image = image
         }
         picker.dismiss(animated: true, completion: nil);
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "dailyToTable" {
+            let taskTable = segue.destination as! TaskTableViewController
+            taskTable.owner = owner
+        }
     }
     
     override func viewDidLoad() {

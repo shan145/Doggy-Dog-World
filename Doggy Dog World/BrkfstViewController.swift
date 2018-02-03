@@ -11,16 +11,25 @@ import UIKit
 class BrkfstViewController: UIViewController {
 
     @IBOutlet weak var breakfastImage: UIImageView!
-    
     @IBOutlet weak var dogText: UITextView!
+    var owner: RegisterOwner!
     
     @IBAction func okayButton(_ sender: UIButton) {
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "brkToTable" {
+            let taskTable = segue.destination as! TaskTableViewController
+            taskTable.owner = owner
+        }
+        else if segue.identifier == "brkToFood" {
+            print("On to the next!")
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        dogText.text = "\(owner.petname) is a \(owner.breed), so she needs \n\nTesting if this part works properly"
         // Do any additional setup after loading the view.
     }
     
